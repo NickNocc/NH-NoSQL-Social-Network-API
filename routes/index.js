@@ -1,21 +1,10 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const router = required('express').Router();
+const apiRoutes = require('./api');
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+router.use('/api', apiRoutes);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
-
-mongoose.conntect(process.env.MONGODB_URI || 'mongodb://localhost/back-end,', {
-    useFindAndModify: false,
-    useNewUrlPArser: true,
-    useUnifedTopology: true
+router.use((req, res) => {
+    res.status(404).send('<h1> 404 Error!</h1>');
 });
 
-mongoose.set('debug', true);
-
-app.use(required('./routes'));
-
-app.listen(PORT, () => console.log(`Conntected to ${PORT}`))
+module.exports = router;
