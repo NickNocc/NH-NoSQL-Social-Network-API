@@ -14,7 +14,7 @@ const thoughtController = {
 
     // Post new thought
     // Add Comment
-    addThought({ params, body }, res) {
+    createThought({ params, body }, res) {
         Thought.create(body)
         
     },
@@ -26,6 +26,29 @@ const thoughtController = {
             body,
             { new: true, runValidators: true }
         )
+    },
+
+    // Delete thought
+    deleteThought({ params }, res) {
+        Thought.findOneAndDelete({ _id: params.id })
+    },
+
+    // Post new reaction
+    createReaction({ params, body }, res) {
+        Thought.findOneAndUpdate(
+            { _id: params.thoughtId },
+            { $push: { reactions: body } },
+            { new: true, runValidators: true }
+        )
+    },
+
+    // Delete Reaction
+    deleteReaction({ params }, res) {
+        Thought.findOneAndUpdate(
+            { _id: params.thoughtId },
+            { $pull: { reactions: params.reactionId}},
+            { new: true }
+            )
     }
 }
 
