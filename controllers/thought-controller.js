@@ -14,7 +14,18 @@ const thoughtController = {
     },
 
     // Get thought by id
-    
+    getThoughtById({ params }, res) {
+        Thought.findOne({ _id: params.id })
+            .then(dbThoughtData => res.json(dbThoughtData))
+            .catch(err => {
+                console.log(err);
+                res.sendStatus(400);
+            })
+    },
+
+    // Post new thought
+    // Add Comment
+   
 };
 
 module.exports = thoughtController
