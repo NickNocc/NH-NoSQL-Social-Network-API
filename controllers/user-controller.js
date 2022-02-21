@@ -1,7 +1,6 @@
 const { User, Thought } = require('../models');
 
 // TO DO:
-//      Finish these functions
 //      Finish functions for thought controller
 //      Troubleshooting
 //      Test Routes
