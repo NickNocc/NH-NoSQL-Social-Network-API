@@ -8,14 +8,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-mongoose.conntect(process.env.MONGODB_URI || 'mongodb://localhost/back-end,', {
-    useFindAndModify: false,
-    useNewUrlPArser: true,
-    useUnifedTopology: true
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/back-end,', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 mongoose.set('debug', true);
 
-app.use(required('./routes'));
+app.use(require('./routes'));
 
 app.listen(PORT, () => console.log(`Conntected to ${PORT}`))

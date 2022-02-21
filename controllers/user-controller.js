@@ -1,7 +1,6 @@
-const { User, Thought } = require('../models');
+const { User } = require('../models');
 
 // TO DO:
-//      Finish functions for thought controller
 //      Troubleshooting
 //      Test Routes
 //      Delete user thoughts on user deletion?
