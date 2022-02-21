@@ -1,10 +1,6 @@
 const { User } = require('../models');
 
 // TO DO:
-//      Troubleshooting
-//      Test Routes
-//      Delete user thoughts on user deletion?
-//             Cascade?
 //      Readme
 //      Video
 //      Submit
