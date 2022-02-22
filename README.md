@@ -14,4 +14,5 @@ To install first copy the repository to your machine. Next navigate to the root 
  </br>
   
 GitHub: https://github.com/NickNocc </br>
-Email: haretakis4@gmail.com
+Email: haretakis4@gmail.com </br>
+Video Walkthrough: https://drive.google.com/file/d/1oEzOu6YK12hM-MDotrct7XOHKIsYGcdd/view
