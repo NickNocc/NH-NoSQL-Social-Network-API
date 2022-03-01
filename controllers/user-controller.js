@@ -1,9 +1,6 @@
 const { User } = require('../models');
 
-// TO DO:
-//      Readme
-//      Video
-//      Submit
+
 
 const userController = {
     // Gets all users
